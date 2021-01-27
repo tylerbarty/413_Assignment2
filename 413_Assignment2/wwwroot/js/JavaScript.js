@@ -1,18 +1,23 @@
 ﻿
+
+
 function calcGrades() {
 
+    //create variables
     var assign;
     var proj;
     var quiz;
     var exam;
     var intexScore;
 
-    assign = parseInt(document.getElementById("assignments").value) * .5;
-    proj = parseInt(document.getElementById("projects").value) * .1;
-    quiz = parseInt(document.getElementById("quizzes").value) * .1;
-    exam = parseInt(document.getElementById("exams").value) * .2;
-    intexScore = parseInt(document.getElementById("intex").value) * .1;
+    //assign variables
+    assign = parseInt($("#assignments").value) * .5;
+    proj = parseInt($("#projects").value) * .1;
+    quiz = parseInt($("#quizzes").value) * .1;
+    exam = parseInt($("#exams").value) * .2;
+    intexScore = parseInt($("#intex").value) * .1;
 
+    //chec to make sure inputs are valid
     if (!(assign > 0 && assign <= 50)) {
         alert("assignments grade is not filled out correctly");
         return false;
@@ -34,9 +39,8 @@ function calcGrades() {
         return false;
     }
 
-
+    //send alert
     var overall = assign + proj + quiz + exam + intexScore;
-
     alert("Overall Score: " + overall + "%");
 }
 
